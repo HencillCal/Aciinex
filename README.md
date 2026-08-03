@@ -1,11 +1,9 @@
-# BLACK DEMON Bot v3.0 🖤
-
 <!-- Glowing Footer -->
 <p align="center">
   <img src="https://i.imgur.com/dBaSKWF.gif" height="40" width="100%">
 </p>
 <div align="center">
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=HI+THIS+IS+BLACK-DEMON;A+MULTI+DEVICE+WHATSAPP+BOT;SCRIPTED+BY+JINWIIL+TECH;STAR+AND+FORK+OUR+REPO" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=HI+THIS+IS+ACCINEX-M;A+MULTI+DEVICE+WHATSAPP+BOT;SCRIPTED+BY+JINWIIL+TECH;STAR+AND+FORK+OUR+REPO" alt="Typing SVG" /></a>
   </p>
 
 > WhatsApp Multi-Device Bot  
