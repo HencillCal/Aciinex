@@ -1,11 +1,11 @@
 /**
  * ╔══════════════════════════════════════════════╗
- * ║         BLACK DEMON WhatsApp Bot             ║
- * ║   Merged with WA-XMD Commands             ║
- * ║    Compatible | Anti-Ban       ║
+ * ║         AciiNex-M WhatsApp Bot               ║
+ * ║   Multi-Device | WA-XMD Commands             ║
+ * ║   Compatible | Anti-Ban                      ║
  * ╚══════════════════════════════════════════════╝
  *
- * Fixed: Stable connection,  support,
+ * Fixed: Stable connection, multi-device support,
  *        anti-ban browser fingerprinting, memory management
  */
 
@@ -58,6 +58,7 @@ setInterval(() => {
 }, 60000);
 
 setInterval(() => {
+  const used = process.memoryUsage();
   if (used.heapUsed > 700 * 1024 * 1024) {
     console.log(chalk.red('⚠️  Memory limit reached — restarting'));
     process.exit(1);
@@ -69,7 +70,7 @@ app.use(express.static('pixel'));
 app.get('/', (req, res) => {
   const file = path.join(__dirname, 'pixel', 'index.html');
   if (fs.existsSync(file)) return res.sendFile(file);
-  res.send('<h1>BLACK DEMON Bot is Running ✅</h1>');
+  res.send('<h1>AciiNex-M Bot is Running ✅</h1>');
 });
 app.get('/health', (req, res) => res.status(200).json({ status: 'alive', uptime: process.uptime() }));
 app.listen(port, () => console.log(chalk.cyan(`📡 Server running on port ${port}`)));
@@ -107,7 +108,7 @@ const color = (text, c) => !c ? chalk.green(text) : chalk.keyword(c)(text);
 // ═════════════════════════════════════════════════════════════════════════════
 // MAIN BOT FUNCTION
 // ═════════════════════════════════════════════════════════════════════════════
-async function startBlackDemon() {
+async function startAciiNex() {
   try {
     // ── Restore session from env ( compatible) ──────────────────
     await authenticationn();
@@ -118,7 +119,7 @@ async function startBlackDemon() {
     console.log(chalk.green(`Using WA v${version.join('.')}, isLatest: ${isLatest}`));
     console.log(
       color(
-        figlet.textSync('BLACK DEMON', {
+        figlet.textSync('AciiNex-M', {
           font: 'Standard',
           horizontalLayout: 'default',
           whitespaceBreak: false,
@@ -161,7 +162,7 @@ async function startBlackDemon() {
       setInterval(() => {
         const date = new Date();
         client.updateProfileStatus(
-          `📅 DATE/TIME ⌚️ ${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} ⏰ DAY ⏰ ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi' })}. BLACK DEMON IS LIVE⚡.`
+          `📅 DATE/TIME ⌚️ ${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} ⏰ DAY ⏰ ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi' })}. AciiNex-M IS LIVE⚡.`
         );
       }, 60 * 1000);
     }
@@ -292,7 +293,7 @@ async function startBlackDemon() {
           reconnectAttempts++;
           const waitMs = Math.min(5000 * reconnectAttempts, 30000);
           console.log(chalk.yellow(`🔄 Reconnecting in ${waitMs / 1000}s (attempt ${reconnectAttempts}/${MAX_RECONNECTS})...`));
-          setTimeout(startBlackDemon, waitMs);
+          setTimeout(startAciiNex, waitMs);
         } else {
           console.log(chalk.red('❌ Max reconnect attempts reached. Restarting process...'));
           process.exit(1);
@@ -305,7 +306,7 @@ async function startBlackDemon() {
 
       if (connection === 'open') {
         reconnectAttempts = 0;
-        console.log(color('✅ BLACK DEMON connected successfully!', 'green'));
+        console.log(color('✅ AciiNex-M connected successfully!', 'green'));
         console.log(color('Mode: ' + mode + ' | Prefix: ' + prefix, 'cyan'));
 
         // Join support channel/group silently
@@ -315,7 +316,7 @@ async function startBlackDemon() {
         // Send startup message to self
         try {
           const startMsg =
-            `> ✅ *BLACK DEMON Bot is ON*\n` +
+            `> ✅ *AciiNex-M Bot is ON*\n` +
             `👥 Mode: ${mode}\n` +
             `👤 Prefix: ${prefix}\n` +
             `📱 Version: 3.0.0 (WA Commands)\n\n` +
@@ -464,7 +465,7 @@ async function startBlackDemon() {
       reconnectAttempts++;
       const waitMs = Math.min(5000 * reconnectAttempts, 30000);
       console.log(chalk.yellow(`🔄 Retrying in ${waitMs / 1000}s...`));
-      setTimeout(startBlackDemon, waitMs);
+      setTimeout(startAciiNex, waitMs);
     } else {
       process.exit(1);
     }
@@ -479,16 +480,16 @@ process.on('unhandledRejection', (reason) => {
   console.error('Unhandled Rejection:', reason);
 });
 process.on('SIGINT', () => {
-  console.log(chalk.yellow('\n👋 Shutting down BLACK DEMON...'));
+  console.log(chalk.yellow('\n👋 Shutting down AciiNex-M...'));
   process.exit(0);
 });
 process.on('SIGTERM', () => {
-  console.log(chalk.yellow('\n👋 Shutting down BLACK DEMON...'));
+  console.log(chalk.yellow('\n👋 Shutting down AciiNex-M...'));
   process.exit(0);
 });
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
-startBlackDemon();
+startAciiNex();
 
 // ── Hot reload ────────────────────────────────────────────────────────────────
 const file = require.resolve(__filename);

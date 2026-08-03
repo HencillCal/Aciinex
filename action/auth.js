@@ -1,27 +1,34 @@
 /**
- * Session Authenticator — Gifted-Session Compatible
+ * Session Authenticator — AciiNex-M Compatible
  *
  * Supports the following SESSION formats:
- *   GIFTED-MD~<base64>       — from gifted-session website
- *   BLACKDEMON~<base64>      — generic prefix variant
- *   GAAJU-MD:<base64>        — GAAJU-XMD website format
- *   <plain base64>           — raw base64-encoded creds.json
+ *   GIFTED-MD~<base64>    — gifted-session website (gzip-compressed JSON)
+ *   Gifted~<base64>       — gifted-session newer/short format
+ *   ACIINEX~<base64>      — AciiNex-M generic prefix
+ *   BLACKDEMON~<base64>   — legacy prefix variant
+ *   GAAJU-MD:<base64>     — GAAJU-XMD website format
+ *   SESSION~<base64>      — plain session prefix
+ *   <plain base64>        — raw base64-encoded creds.json
  *
  * How to get a session ID:
  *   1. Deploy gifted-session (or use the public link).
  *   2. Open the /pair page and enter your phone number.
  *   3. Enter the pairing code in WhatsApp.
- *   4. Copy the SESSION_ID shown and paste it into your .env file.
+ *   4. Copy the SESSION_ID shown and paste it into your .env or .env file.
+ *      Works on Heroku (config vars), VPS (.env), panel, or any host that
+ *      supports environment variables.
  */
 
 const fs   = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const SESSION_FILE = './session/creds.json';
 const SESSION_DIR  = './session';
 
 /**
  * Decode a session string to a valid creds.json object.
+ * Handles gzip-compressed payloads (GIFTED-MD~ format) automatically.
  * Returns null when decoding fails.
  */
 function decodeSession(rawSession) {
@@ -29,8 +36,13 @@ function decodeSession(rawSession) {
 
   let base64Part = rawSession.trim();
 
-  // Strip known prefixes (case-insensitive)
-  const prefixes = ['GIFTED-MD~', 'BLACKDEMON~', 'BLACKDEMON~', 'GAAJU-MD:', 'SESSION~'];
+  // Strip known prefixes (case-insensitive, with or without trailing ~)
+  const prefixes = [
+    'GIFTED-MD~', 'Gifted~', 'GIFTED~',
+    'ACIINEX~', 'ACIINEX-M~',
+    'BLACKDEMON~',
+    'GAAJU-MD:', 'SESSION~',
+  ];
   for (const p of prefixes) {
     if (base64Part.toUpperCase().startsWith(p.toUpperCase())) {
       base64Part = base64Part.slice(p.length).replace(/^~+/, '');
@@ -38,14 +50,23 @@ function decodeSession(rawSession) {
     }
   }
 
-  // Try base64 decode → JSON parse
+  // Try base64 decode → (gunzip if gzipped) → JSON parse
+  // GIFTED-MD~ sessions are gzip-compressed — base64 starts with H4sI
   try {
-    const decoded = Buffer.from(base64Part, 'base64').toString('utf-8');
-    const parsed  = JSON.parse(decoded);
+    const buf = Buffer.from(base64Part, 'base64');
+    let text;
+    try {
+      // Attempt gzip decompression first
+      text = zlib.gunzipSync(buf).toString('utf-8');
+    } catch (_) {
+      // Not gzipped — treat as plain UTF-8
+      text = buf.toString('utf-8');
+    }
+    const parsed = JSON.parse(text);
     if (parsed && typeof parsed === 'object') return parsed;
   } catch (_) {}
 
-  // Maybe it's already plain JSON (no encoding)
+  // Maybe it's already plain JSON (no encoding at all)
   try {
     const parsed = JSON.parse(base64Part);
     if (parsed && typeof parsed === 'object') return parsed;
@@ -70,7 +91,7 @@ async function authentication() {
 
   if (!creds) {
     console.error('❌ SESSION is set but could not be decoded. Check your SESSION format.');
-    console.error('   Expected: GIFTED-MD~<base64> or raw base64 of creds.json');
+    console.error('   Accepted formats: GIFTED-MD~<base64>, Gifted~<base64>, ACIINEX~<base64>, or raw base64 of creds.json');
     return;
   }
 

@@ -1,5 +1,5 @@
 const welcomegoodbye = process.env.WELCOMEGOODBYE || 'FALSE';
-const botname        = process.env.BOTNAME        || 'BLACK-DEMON 🖤';
+const botname        = process.env.BOTNAME        || 'AciiNex-M 🖤';
 
 const Events = async (client, Nick) => {
   try {

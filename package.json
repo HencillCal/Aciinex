@@ -1,14 +1,14 @@
 {
-  "name": "black-demon-bot",
+  "name": "aciinex-m-bot",
   "version": "3.0.0",
-  "description": "BLACK DEMON WhatsApp Bot — Merged with  Commands, Gifted-Session Compatible",
+  "description": "AciiNex-M WhatsApp Bot — Multi-Device, Gifted-Session Compatible",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
     "start": "node index.js",
     "dev":   "node --expose-gc index.js"
   },
-  "keywords": ["whatsapp-bot", "baileys", "black-demon", "JinwiiTech", "whatsapp-multi-device"],
+  "keywords": ["whatsapp-bot", "baileys", "aciinex-m", "JinwiiTech", "whatsapp-multi-device"],
   "license": "MIT",
   "dependencies": {
     "@whiskeysockets/baileys": "github:xhclintohn/Baileys",

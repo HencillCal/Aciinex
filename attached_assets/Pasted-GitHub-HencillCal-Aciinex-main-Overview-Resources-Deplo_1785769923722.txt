@@ -1,0 +1,61 @@
+GitHub
+HencillCal/Aciinex
+main
+Overview Resources Deploy Metrics Activity Access Settings
+Application Logs
+2026-08-03T15:03:38.700462+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-03T15:03:38.708841+00:00 app[web.1]:   ____  _        _    ____ _  __  ____  _____ __  __  ___  _   _ 
+2026-08-03T15:03:38.708842+00:00 app[web.1]:  | __ )| |      / \  / ___| |/ / |  _ \| ____|  \/  |/ _ \| \ | |
+2026-08-03T15:03:38.708842+00:00 app[web.1]:  |  _ \| |     / _ \| |   | ' /  | | | |  _| | |\/| | | | |  \| |
+2026-08-03T15:03:38.708843+00:00 app[web.1]:  | |_) | |___ / ___ \ |___| . \  | |_| | |___| |  | | |_| | |\  |
+2026-08-03T15:03:38.708843+00:00 app[web.1]:  |____/|_____/_/   \_\____|_|\_\ |____/|_____|_|  |_|\___/|_| \_|
+2026-08-03T15:03:38.708843+00:00 app[web.1]:                                                                  
+2026-08-03T15:03:38.723180+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-03T15:03:38.747424+00:00 heroku[web.1]: State changed from starting to up
+2026-08-03T15:03:39.155193+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:04:39.155602+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:03:29.587559+00:00 app[api]: Deploy 8640c3a0 by user jinwiilonginjo01@gmail.com
+2026-08-03T15:03:29.587559+00:00 app[api]: Release v5 created by user jinwiilonginjo01@gmail.com
+2026-08-03T15:03:45.000000+00:00 app[api]: Build succeeded
+2026-08-03T15:04:59.155343+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:04:29.885517+00:00 app[api]: Log session created by user jinwiilonginjo01@gmail.com
+2026-08-03T15:05:19.155827+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:05:39.155699+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:05:59.156394+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:06:19.401721+00:00 app[web.1]: Connection closed. Reason: 408
+2026-08-03T15:06:19.401735+00:00 app[web.1]: 🔄 Reconnecting in 5s (attempt 1/10)...
+2026-08-03T15:06:24.402417+00:00 app[web.1]: ❌ SESSION is set but could not be decoded. Check your SESSION format.
+2026-08-03T15:06:24.402424+00:00 app[web.1]:    Expected: GIFTED-MD~<base64> or raw base64 of creds.json
+2026-08-03T15:06:24.425086+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-03T15:06:24.425606+00:00 app[web.1]:   ____  _        _    ____ _  __  ____  _____ __  __  ___  _   _ 
+2026-08-03T15:06:24.425607+00:00 app[web.1]:  | __ )| |      / \  / ___| |/ / |  _ \| ____|  \/  |/ _ \| \ | |
+2026-08-03T15:06:24.425607+00:00 app[web.1]:  |  _ \| |     / _ \| |   | ' /  | | | |  _| | |\/| | | | |  \| |
+2026-08-03T15:06:24.425607+00:00 app[web.1]:  | |_) | |___ / ___ \ |___| . \  | |_| | |___| |  | | |_| | |\  |
+2026-08-03T15:06:24.425607+00:00 app[web.1]:  |____/|_____/_/   \_\____|_|\_\ |____/|_____|_|  |_|\___/|_| \_|
+2026-08-03T15:06:24.425608+00:00 app[web.1]:                                                                  
+2026-08-03T15:06:24.429133+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-03T15:06:24.770176+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:07:24.770719+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:07:44.770522+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:08:04.771679+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:08:24.771921+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:08:38.645730+00:00 app[web.1]: Uncaught Exception: used is not defined
+2026-08-03T15:08:44.772326+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:09:04.986384+00:00 app[web.1]: Connection closed. Reason: 408
+2026-08-03T15:09:04.986406+00:00 app[web.1]: 🔄 Reconnecting in 10s (attempt 2/10)...
+2026-08-03T15:09:14.987421+00:00 app[web.1]: ❌ SESSION is set but could not be decoded. Check your SESSION format.
+2026-08-03T15:09:14.987435+00:00 app[web.1]:    Expected: GIFTED-MD~<base64> or raw base64 of creds.json
+2026-08-03T15:09:15.014950+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-03T15:09:15.015519+00:00 app[web.1]:   ____  _        _    ____ _  __  ____  _____ __  __  ___  _   _ 
+2026-08-03T15:09:15.015519+00:00 app[web.1]:  | __ )| |      / \  / ___| |/ / |  _ \| ____|  \/  |/ _ \| \ | |
+2026-08-03T15:09:15.015520+00:00 app[web.1]:  |  _ \| |     / _ \| |   | ' /  | | | |  _| | |\/| | | | |  \| |
+2026-08-03T15:09:15.015520+00:00 app[web.1]:  | |_) | |___ / ___ \ |___| . \  | |_| | |___| |  | | |_| | |\  |
+2026-08-03T15:09:15.015520+00:00 app[web.1]:  |____/|_____/_/   \_\____|_|\_\ |____/|_____|_|  |_|\___/|_| \_|
+2026-08-03T15:09:15.015520+00:00 app[web.1]:                                                                  
+2026-08-03T15:09:15.018941+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-03T15:09:15.459697+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:10:15.460183+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:10:35.462345+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:10:55.464002+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:11:15.463967+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp
+2026-08-03T15:11:35.466130+00:00 app[web.1]: 📱 QR Code generated — scan with WhatsApp

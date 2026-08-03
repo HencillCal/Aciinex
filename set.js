@@ -1,5 +1,5 @@
 /**
- * BLACK DEMON Bot Configuration
+ * AciiNex-M Bot Configuration
  * Edit this file OR set environment variables.
  * 
  * SESSION SETUP (choose one method):
@@ -22,7 +22,7 @@ const sessionName = 'session';
 // ── Bot settings ───────────────────────────────────────────────────────────────
 const prefix        = process.env.PREFIX          || '.';
 const mode          = process.env.MODE            || 'PUBLIC';    // PUBLIC | PRIVATE
-const botname       = process.env.BOTNAME         || 'BLACK-DEMON';
+const botname       = process.env.BOTNAME         || 'AciiNex-M';
 const dev           = process.env.DEV             || '254769365617';
 const DevRaven      = dev.split(',');
 
@@ -45,7 +45,7 @@ const bad           = process.env.BAD_WORD         || 'fuck';
 const wapresence    = process.env.WA_PRESENCE      || 'online';   // online | typing | recording | unavailable
 
 // ── Sticker metadata ───────────────────────────────────────────────────────────
-const packname      = process.env.STICKER_PACKNAME  || 'BLACK-DEMON';
+const packname      = process.env.STICKER_PACKNAME  || 'AciiNex-M';
 const author        = process.env.STICKER_AUTHOR    || 'Jinwiil Onginjo';
 
 // ── UI / Menu ──────────────────────────────────────────────────────────────────
