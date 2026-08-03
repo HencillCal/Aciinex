@@ -1,5 +1,5 @@
 
-// return the calibrace 
+ 
   "name": "Black-Hencill",
   "description": "I don't know what I'm doing",
   "keywords": [
@@ -15,8 +15,8 @@
     "baileys-md",
     "jinwiil"
   ],
-  "website": "https://github.com/Finjohns/Black-Hencill#readme",
-  "repository": "https://github.com/Finjohns/Black-Hencill.git",
+  "website": "https://github.com/HencillCal/Aciinex#readme",
+  "repository": "https://github.com/HencillCal/Aciinex.git",
   "logo": "https://files.catbox.moe/m38sqm.jpg",
   "success_url": "/",
   "env": {
