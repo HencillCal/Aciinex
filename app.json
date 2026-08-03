@@ -1,4 +1,4 @@
-
+{
  
   "name": "Black-Hencill",
   "description": "I don't know what I'm doing",
@@ -164,7 +164,7 @@
     {
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
     },
-    {
+    
       "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
     }
   ]
