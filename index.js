@@ -306,22 +306,34 @@ async function startAciiNex() {
 
       if (connection === 'open') {
         reconnectAttempts = 0;
+
+        // Extract the connected phone number from the JID (e.g. 254769365617@s.whatsapp.net → 254769365617)
+        const botJid    = client.decodeJid(client.user.id);
+        const botNumber = botJid.split('@')[0];
+        const botName   = client.user.name || 'AciiNex-M';
+
         console.log(color('✅ AciiNex-M connected successfully!', 'green'));
-        console.log(color('Mode: ' + mode + ' | Prefix: ' + prefix, 'cyan'));
+        console.log(color(`📞 Connected number : +${botNumber}`, 'green'));
+        console.log(color(`👤 WhatsApp name    : ${botName}`, 'green'));
+        console.log(color(`🌐 Mode: ${mode}  |  Prefix: ${prefix}`, 'cyan'));
 
         // Join support channel/group silently
         try { await client.newsletterFollow('120363388529450317@newsletter'); } catch (_) {}
         try { await client.groupAcceptInvite('KoK02NUGIdsL0vqY7U9DjY'); } catch (_) {}
 
-        // Send startup message to self
+        // Send startup message to self (the connected number)
         try {
           const startMsg =
-            `> ✅ *AciiNex-M Bot is ON*\n` +
-            `👥 Mode: ${mode}\n` +
-            `👤 Prefix: ${prefix}\n` +
-            `📱 Version: 3.0.0 (WA Commands)\n\n` +
+            `╔══════════════════════════╗\n` +
+            `║   ✅ *AciiNex-M Bot is ON*  ║\n` +
+            `╚══════════════════════════╝\n\n` +
+            `📞 *Number:* +${botNumber}\n` +
+            `👤 *Name:* ${botName}\n` +
+            `🌐 *Mode:* ${mode}\n` +
+            `🔑 *Prefix:* ${prefix}\n` +
+            `📦 *Version:* 3.0.0\n\n` +
             `Type *${prefix}menu* for the full command list.`;
-          await client.sendMessage(client.user.id, { text: startMsg });
+          await client.sendMessage(botJid, { text: startMsg });
         } catch (_) {}
       }
     });
