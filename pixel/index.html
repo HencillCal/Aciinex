@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLACK DEMON Bot</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .logo { font-size: 4rem; margin-bottom: 0.5rem; }
+    h1 { font-size: 2rem; color: #22c55e; letter-spacing: 4px; }
+    p { color: #888; margin-top: 0.5rem; }
+    .status {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background: #1a1a1a;
+      border: 1px solid #22c55e44;
+      border-radius: 8px;
+      color: #22c55e;
+      font-size: 0.9rem;
+    }
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">🖤</div>
+  <h1>BLACK DEMON</h1>
+  <p>WhatsApp Multi-Device Bot • GAAJU-XMD Commands</p>
+  <div class="status">
+    <span class="dot"></span> Bot is running
+  </div>
+</body>
+</html>
