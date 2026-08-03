@@ -1,7 +1,17 @@
 # BLACK DEMON Bot v3.0 🖤
 
-> WhatsApp Multi-Device Bot — Merged with GAAJU-XMD commands  
-> Gifted-Session compatible | Anti-ban browser fingerprint | Stable reconnection
+<!-- Glowing Footer -->
+<p align="center">
+  <img src="https://i.imgur.com/dBaSKWF.gif" height="40" width="100%">
+</p>
+<div align="center">
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=HI+THIS+IS+BLACK-DEMON;A+MULTI+DEVICE+WHATSAPP+BOT;SCRIPTED+BY+JINWIIL+TECH;STAR+AND+FORK+OUR+REPO" alt="Typing SVG" /></a>
+  </p>
+
+> WhatsApp Multi-Device Bot  
+<p align="center">
+<a href="#"><img title="Creator" src="https://img.shields.io/badge/Creator- Aciinex-blue.svg?style=for-the-badge&logo=github"></a>
+</p>
 
 ---
 
@@ -66,41 +76,26 @@ node index.js
 | `MENU_TYPE` | `IMAGE` | `IMAGE`, `VIDEO`, `TEXT`, or `LINK` |
 | `WA_PRESENCE` | `online` | `online`, `typing`, `recording`, `unavailable` |
 
----
+ 
+***[![Tap to deploy on heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/Finjohns/Black-Hencill&template=https://github.com/Finjohns/Black-Hencill.git)***
+ 
+ 
+  
+  <!-- Glowing Footer -->
+<p align="center">
+  <img src="https://i.imgur.com/dBaSKWF.gif" height="40" width="100%">
+</p>
 
-## 📋 Command List
+## License
 
-### 📥 Downloads
-`.video`, `.ytmp4`, `.ytv`, `.ytmp3`, `.yta`, `.yts`, `.song`, `.song2`, `.play`, `.play2`, `.spotify`, `.tiktok`, `.facebook`, `.fbdl`, `.insta`, `.twitter`, `.pinterest`, `.lyrics`, `.lyrics2`, `.web2zip`
-
-### 🎭 Media / Edit
-`.sticker`, `.attp`, `.photo`, `.take`, `.vv`, `.vv2`, `.mix`, `.mp4`, `.smeme`, `.tweet`, `.screenshots`, `.simage`, `.blur`
-
-### 👥 Group Management
-`.approve`, `.promote`, `.demote`, `.kick`, `.remove`, `.ban`, `.unban`, `.mute`, `.unmute`, `.open`, `.close`, `.add`, `.leave`, `.join`, `.tagall`, `.hidetag`, `.revoke`, `.resetlink`, `.desc`, `.subject`, `.icon`, `.gcprofile`, `.groupinfo`, `.warn`, `.warnings`, `.staff`, `.welcome`, `.goodbye`, `.antilink`, `.antitag`, `.antiforeign`, `.antibot`, `.antibadword`
-
-### 🤖 AI / Chatbot
-`.ai`, `.ai2`, `.gemini`, `.gpt`, `.gpt2`, `.gpt3`, `.gpt4`, `.vision`, `.define`, `.chatbot`, `.generate`, `.aivideo`, `.code`, `.gpt`
-
-### 🛠️ Tools & Utilities
-`.ping`, `.alive`, `.menu`, `.help`, `.tts`, `.translate`, `.trt`, `.weather`, `.news`, `.github`, `.url`, `.facts`, `.fact`, `.quotes`, `.quote`, `.advice`, `.joke`, `.meme`, `.dice`, `.coinflip`, `.8ball`, `.poll`, `.trivia`, `.hangman`, `.tictactoe`, `.emojimix`, `.ship`, `.pair`, `.compliment`, `.insult`, `.flirt`, `.dare`, `.truth`, `.simp`, `.wasted`, `.character`, `.anime`, `.roseday`, `.poet`, `.goodnight`, `.zodiac`
-
-### 👑 Owner Commands
-`.restart`, `.cast`, `.broadcast`, `.broadcast`, `.join`, `.block`, `.unblock`, `.setpp`, `.botpp`, `.save`, `.kill`, `.kickall`, `.setvar`, `.getvar`, `.redeploy`, `.update`, `.cleartemp`, `.clearsession`, `.sudo`, `.settings`, `.premium`, `.setpremium`, `.rmpremium`
-
-### ⚙️ Settings (GAAJU)
-`.autostatus`, `.autoread`, `.autotyping`, `.autorecord`, `.antidelete`, `.anticall`, `.pmblocker`, `.setprefix`, `.menustyle`, `.menufont`
-
----
-
-## 🔗 Gifted-Session Website
-
-The gifted-session code is in the `gifted-session-main/` folder (from the zip you uploaded).  
-You can deploy it to Vercel, Render, or any Node.js host and use it to pair your bot.
-
----
-
+[MIT License]((https://github.com/Finjohns/Black-Demon)/LICENSE)
 ## ⚠️ Disclaimer
 
 This bot is for educational purposes. Use responsibly.  
+
+<!-- Glowing Footer -->
+<p align="center">
+  <img src="https://i.imgur.com/dBaSKWF.gif" height="40" width="100%">
+</p>
+
 Do not use for spam or any activity that violates WhatsApp's Terms of Service.
