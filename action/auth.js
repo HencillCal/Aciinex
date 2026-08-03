@@ -40,6 +40,7 @@ function decodeSession(rawSession) {
   const prefixes = [
     'GIFTED-MD~', 'Gifted~', 'GIFTED~',
     'ACIINEX~', 'ACIINEX-M~',
+    'JINWIIL-MD~', 'JINWIIL-XMD:',
     'BLACKDEMON~',
     'GAAJU-MD:', 'SESSION~',
   ];
