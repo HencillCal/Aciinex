@@ -30,7 +30,7 @@ function decodeSession(rawSession) {
   let base64Part = rawSession.trim();
 
   // Strip known prefixes (case-insensitive)
-  const prefixes = ['GIFTED-MD~', 'BLACKDEMON~', 'BLACKDEMON~', 'GAAJU-MD:', 'SESSION~'];
+  const prefixes = ['ACIINEX-M~', 'JINWIIL-MD~', 'Gifted~', 'JINWIIL-XMD:', 'SESSION~'];
   for (const p of prefixes) {
     if (base64Part.toUpperCase().startsWith(p.toUpperCase())) {
       base64Part = base64Part.slice(p.length).replace(/^~+/, '');
