@@ -325,20 +325,7 @@ async function startAciiNex() {
         try { await client.newsletterFollow('120363388529450317@newsletter'); } catch (_) {}
         try { await client.groupAcceptInvite('KoK02NUGIdsL0vqY7U9DjY'); } catch (_) {}
 
-        // Send startup message to self (the connected number)
-        try {
-          const startMsg =
-            `╔══════════════════════════╗\n` +
-            `║   ✅ *AciiNex-M Bot is ON*  ║\n` +
-            `╚══════════════════════════╝\n\n` +
-            `📞 *Number:* +${botNumber}\n` +
-            `👤 *Name:* ${botName}\n` +
-            `🌐 *Mode:* ${mode}\n` +
-            `🔑 *Prefix:* ${prefix}\n` +
-            `📦 *Version:* 3.0.0\n\n` +
-            `Type *${prefix}menu* for the full command list.`;
-          await client.sendMessage(botJid, { text: startMsg });
-        } catch (_) {}
+        // Startup WA message removed — was spamming the user on every crash/reconnect
       }
     });
 

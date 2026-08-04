@@ -815,14 +815,13 @@ let cap = `
  ═══════════════════════════╝`;
 		       
 if (menu === 'VIDEO') {
-
-                   client.sendMessage(m.chat, {
-                        video: fs.readFileSync('./Media/get_rich.mp4'),
-                        caption: stylishReply(cap),
-                        gifPlayback: true
-                    }, {
-                        quoted: m
-                    })
+  // Local media file may not exist on Heroku — fall through to IMAGE
+  const _vidPath = './Media/get_rich.mp4';
+  if (fs.existsSync(_vidPath)) {
+    client.sendMessage(m.chat, { video: fs.readFileSync(_vidPath), caption: stylishReply(cap), gifPlayback: true }, { quoted: m });
+  } else {
+    client.sendMessage(m.chat, { image: { url: 'https://files.catbox.moe/m38sqm.jpg' }, caption: stylishReply(cap) }, { quoted: m });
+  }
                 } else if (menu === 'TEXT') {
 client.sendMessage(from, { text: stylishReply(cap)}, {quoted: m})
 
@@ -836,7 +835,7 @@ client.sendMessage(m.chat, {
                                 showAdAttribution: true,
                                 title: `AciiNex-M 😈`,
                                 body: `${runtime(process.uptime())}`,
-                                thumbnail: fs.readFileSync('./Media/blackmachant.jpg'),
+                                thumbnail: { url: 'https://files.catbox.moe/m38sqm.jpg' },
                                 sourceUrl: 'https://wa.me/254769365617?text=Hello👋+Jinwiil+Nihostie+Bot+Mkuu+😔',
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -2463,31 +2462,34 @@ m.reply("An error occured.")
 	      break;
 
 //========================================================================================================================//		      
-	      case "alive": case "test": {
-		      const audiovn = "./Media/wutiwant.mp3";
-    const dooc = {
-        audio: {
-          url: audiovn
-        },
-        mimetype: 'audio/mp4',
-        ptt: true,
-        waveform:  [100, 0, 100, 0, 100, 0, 100],
-        fileName: "BACK DEMON 🐈‍⬛",
-
+      case "alive": case "test": {
+      // Local ./Media/wutiwant.mp3 does not exist on Heroku — send image alive instead
+      const _aliveCap =
+        `╔══════════════════════════╗\n` +
+        `║   ✅ *AciiNex-M is ALIVE!*  ║\n` +
+        `╚══════════════════════════╝\n\n` +
+        `📞 *Bot:* AciiNex-M\n` +
+        `⏱ *Uptime:* ${runtime(process.uptime())}\n` +
+        `🌐 *Mode:* ${mode}\n` +
+        `🔑 *Prefix:* ${prefix}\n\n` +
+        `> Powered by AciiNex-M`;
+      await client.sendMessage(m.chat, {
+        image: { url: 'https://files.catbox.moe/m38sqm.jpg' },
+        caption: _aliveCap,
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "𝗛𝗶 𝗛𝘂𝗺𝗮𝗻👋, 𝗜 𝗮𝗺 𝗔𝗹𝗶𝘃𝗲 𝗻𝗼𝘄",
-          body: "BACK DEMON 🐈‍⬛",
-          thumbnailUrl: "https://files.catbox.moe/xiflcv.jpeg",
-          sourceUrl: 'https://instagram.com/Jinwiil ',
-          mediaType: 1,
-          renderLargerThumbnail: true
-          }}
-      };
-	await client.sendMessage(m.chat, dooc, {quoted: m });
-	      }
-		 break;
+            title: '✅ AciiNex-M is Alive',
+            body: 'Bot is online and ready!',
+            thumbnailUrl: 'https://files.catbox.moe/m38sqm.jpg',
+            sourceUrl: 'https://instagram.com/Jinwiil',
+            mediaType: 1,
+            renderLargerThumbnail: true
+          }
+        }
+      }, { quoted: m });
+      }
+      break;
 		      
 //========================================================================================================================//		      
 	case "removebg": {
@@ -3785,36 +3787,56 @@ if (!m.quoted) return m.reply("quote a viewonce message eh")
 
 //========================================================================================================================//		      
     case 'take': case 't': {
-const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter');
-
-if(!msgR) { m.reply('Quote an image, a short video or a sticker to change watermark.') ; return } ;
+// ── Sticker creation runs in an isolated child_process.fork() ──────────────
+// wa-sticker-formatter uses sharp (native C++) which causes a glibc malloc
+// assertion failure (SIGABRT / exit 134) that kills the whole process.
+// Fork isolates the crash so only the child dies — the bot keeps running.
+if (!msgR) { m.reply('Quote an image, a short video or a sticker to change watermark.'); return; }
 
 let media;
-if (msgR.imageMessage) {
-     media = msgR.imageMessage
-  } else if(msgR.videoMessage) {
-media = msgR.videoMessage
-  } 
-  else if (msgR.stickerMessage) {
-    media = msgR.stickerMessage ;
-  } else {
-    m.reply('This is neither a sticker, image nor a video...'); return
-  } ;
+if (msgR.imageMessage)        media = msgR.imageMessage;
+else if (msgR.videoMessage)   media = msgR.videoMessage;
+else if (msgR.stickerMessage) media = msgR.stickerMessage;
+else { m.reply('This is neither a sticker, image nor a video...'); return; }
 
-var result = await client.downloadAndSaveMediaMessage(media);
+const _stickerFile = await client.downloadAndSaveMediaMessage(media);
 
-let stickerResult = new Sticker(result, {
-            pack: pushname,
-            author: pushname,
-            type: StickerTypes.FULL,
-            categories: ["🤩", "🎉"],
-            id: "12345",
-            quality: 70,
-            background: "transparent",
-          });
-const Buffer = await stickerResult.toBuffer();
-          client.sendMessage(m.chat, { sticker: Buffer }, { quoted: m });
+await new Promise((resolve) => {
+  const _cp   = require('child_process');
+  const _pth  = require('path');
+  const _child = _cp.fork(
+    _pth.join(__dirname, 'lib/sticker-worker.js'),
+    [JSON.stringify({ filePath: _stickerFile, pack: packname || 'AciiNex-M', author: pushname || 'AciiNex-M' })],
+    { silent: true }
+  );
+  const _timer = setTimeout(() => {
+    try { _child.kill(); } catch (_) {}
+    m.reply('⏳ Sticker conversion timed out. Try a smaller image.');
+    resolve();
+  }, 30000);
 
+  _child.on('message', async (msg) => {
+    clearTimeout(_timer);
+    if (msg.success && msg.outPath) {
+      try {
+        const _buf = require('fs').readFileSync(msg.outPath);
+        await client.sendMessage(m.chat, { sticker: _buf }, { quoted: m });
+        try { require('fs').unlinkSync(msg.outPath); } catch (_) {}
+      } catch (e) { m.reply('Failed to send sticker.'); }
+    } else {
+      m.reply('\u274c Could not create sticker: ' + (msg.error || 'unknown error'));
+    }
+    resolve();
+  });
+  _child.on('error', () => { clearTimeout(_timer); m.reply('\u274c Sticker worker failed to start.'); resolve(); });
+  _child.on('exit', (code) => {
+    clearTimeout(_timer);
+    if (code !== 0 && code !== null) {
+      m.reply('\u274c Sticker creation failed (code ' + code + '). Try a different image.');
+    }
+    resolve();
+  });
+});
 }
 break;
 
