@@ -14,7 +14,7 @@ const speed = require("performance-now");
 const Genius = require("genius-lyrics");
 const yts = require("yt-search");
 let lastTextTime = 0;
-const messageDelay = 3000;
+const messageDelay = 500;
 const { DateTime } = require('luxon');
 const uploadtoimgur = require('./lib/imgur');
 const advice = require("badadvice");
@@ -1096,7 +1096,7 @@ m.reply("Wait for a moment AciiNex-M🎈 is generating your session")
         let code = data.code;
 		
 const Code = ` ${code}`
-await sleep(3000);
+await sleep(500);
 	
  await m.reply(Code);
 	}
@@ -3066,7 +3066,7 @@ m.reply("Pending Participants have been Rejected!");
 case 'restart':  
   if (!Owner) throw NotOwner; 
   reply(`Restarting. . .`)  
-  await sleep(3000)  
+  await sleep(1000)  
   process.exit()  
   break;
 

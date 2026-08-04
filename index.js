@@ -47,6 +47,11 @@ const {
 
 const Events         = require('./action/events');
 const authenticationn = require('./action/auth');
+// Cache blacks module once at startup — do NOT require() inside the message handler
+// (Node does cache modules, but any load error inside the handler causes a silent try/catch
+//  swallow on every single message, killing response times)
+let raven;
+try { raven = require('./blacks'); } catch (e) { console.error('⚠️  Failed to load blacks.js:', e.message); }
 
 const app    = express();
 const logger = pino({ level: 'silent' });
@@ -252,8 +257,7 @@ async function startAciiNex() {
         if (mek.key.id && mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return;
 
         const m = smsg(client, mek, store);
-        const raven = require('./blacks');
-        raven(client, m, chatUpdate, store);
+        if (raven) raven(client, m, chatUpdate, store);
       } catch (err) {
         console.log('Message handler error:', err.message);
       }

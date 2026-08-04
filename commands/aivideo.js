@@ -41,7 +41,8 @@
  * Professional Version
  */
 
-const { Client } = require('@gradio/client');
+// @gradio/client is ESM-only (v0.11+), so we must use dynamic import()
+// The Client variable is resolved lazily inside aivideoCommand
 const fs = require('fs');
 const path = require('path');
 
@@ -96,6 +97,7 @@ async function aivideoCommand(sock, chatId, message) {
             } catch (e) {}
         }, 2000);
 
+        const { Client } = await import('@gradio/client');
         const app = await Client.connect("Wan-AI/Wan2.1-T2V-1.3B-Diffusers");
         const result = await app.predict("/predict", {
             prompt: query,
