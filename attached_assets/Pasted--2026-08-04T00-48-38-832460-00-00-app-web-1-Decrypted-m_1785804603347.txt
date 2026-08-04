@@ -1,0 +1,34 @@
+: }
+2026-08-04T00:48:38.832460+00:00 app[web.1]: Decrypted message with closed session.
+2026-08-04T00:48:47.695549+00:00 app[web.1]: Decrypted message with closed session.
+2026-08-04T00:48:47.698263+00:00 app[web.1]: [ AciiNex-M ♠♣] .t Jinwiil Onginjo From Finjohns(911) [ 254784320958 ]
+2026-08-04T00:48:47.914848+00:00 app[web.1]: Fatal glibc error: malloc.c:3351 (__libc_malloc): assertion failed: !victim || chunk_is_mmapped (mem2chunk (victim)) || ar_ptr == arena_for_chunk (mem2chunk (victim))
+2026-08-04T00:48:48.040851+00:00 app[web.1]: Aborted (core dumped)
+2026-08-04T00:48:48.045388+00:00 app[web.1]: npm notice
+2026-08-04T00:48:48.045391+00:00 app[web.1]: npm notice New major version of npm available! 11.17.0 -> 12.0.2
+2026-08-04T00:48:48.045392+00:00 app[web.1]: npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+2026-08-04T00:48:48.045399+00:00 app[web.1]: npm notice To update run: npm install -g npm@12.0.2
+2026-08-04T00:48:48.045400+00:00 app[web.1]: npm notice
+2026-08-04T00:48:48.099295+00:00 heroku[web.1]: Process exited with status 134
+2026-08-04T00:48:48.162116+00:00 heroku[web.1]: State changed from up to crashed
+2026-08-04T00:48:48.165850+00:00 heroku[web.1]: State changed from crashed to starting
+2026-08-04T00:48:59.247619+00:00 heroku[web.1]: Starting process with command `npm start`
+2026-08-04T00:49:00.387569+00:00 app[web.1]: 
+2026-08-04T00:49:00.387588+00:00 app[web.1]: > aciinex-m-bot@3.0.0 start
+2026-08-04T00:49:00.387588+00:00 app[web.1]: > node index.js
+2026-08-04T00:49:00.387588+00:00 app[web.1]: 
+2026-08-04T00:49:01.670440+00:00 heroku[web.1]: State changed from starting to up
+2026-08-04T00:49:01.420279+00:00 app[web.1]: ✅ Session restored from SESSION env variable.
+2026-08-04T00:49:01.420838+00:00 app[web.1]: 📡 Server running on port 46963
+2026-08-04T00:49:01.452116+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-04T00:49:01.457043+00:00 app[web.1]:      _        _ _ _   _                __  __ 
+2026-08-04T00:49:01.457044+00:00 app[web.1]:     / \   ___(_|_) \ | | _____  __    |  \/  |
+2026-08-04T00:49:01.457044+00:00 app[web.1]:    / _ \ / __| | |  \| |/ _ \ \/ /____| |\/| |
+2026-08-04T00:49:01.457044+00:00 app[web.1]:   / ___ \ (__| | | |\  |  __/>  <_____| |  | |
+2026-08-04T00:49:01.457044+00:00 app[web.1]:  /_/   \_\___|_|_|_| \_|\___/_/\_\    |_|  |_|
+2026-08-04T00:49:01.457044+00:00 app[web.1]:                                               
+2026-08-04T00:49:01.471963+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-04T00:49:02.294509+00:00 app[web.1]: ✅ AciiNex-M connected successfully!
+2026-08-04T00:49:02.294537+00:00 app[web.1]: 📞 Connected number : +254784320958
+2026-08-04T00:49:02.294553+00:00 app[web.1]: 👤 WhatsApp name    : Finjohns(911)
+2026-08-04T00:49:02.294580+00:00 app[web.1]: 🌐 Mode: PUBLIC  |  Prefix: .

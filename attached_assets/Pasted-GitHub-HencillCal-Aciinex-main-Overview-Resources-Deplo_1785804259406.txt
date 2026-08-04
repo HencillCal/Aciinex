@@ -1,0 +1,46 @@
+GitHub
+HencillCal/Aciinex
+main
+Overview Resources Deploy Metrics Activity Access Settings
+Application Logs
+2026-08-04T00:26:24.287404+00:00 app[web.1]:                                               
+2026-08-04T00:26:24.305444+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-04T00:26:24.370180+00:00 heroku[web.1]: State changed from starting to up
+2026-08-04T00:26:26.101786+00:00 app[web.1]: ✅ AciiNex-M connected successfully!
+2026-08-04T00:26:26.101880+00:00 app[web.1]: 📞 Connected number : +254784320958
+2026-08-04T00:26:26.101912+00:00 app[web.1]: 👤 WhatsApp name    : Finjohns(911)
+2026-08-04T00:26:26.101943+00:00 app[web.1]: 🌐 Mode: PUBLIC  |  Prefix: .
+2026-08-04T00:26:33.000000+00:00 app[api]: Build succeeded
+2026-08-04T00:38:48.000000+00:00 app[api]: Build started by user jinwiilonginjo01@gmail.com
+2026-08-04T00:39:10.334259+00:00 app[api]: Log session created by user jinwiilonginjo01@gmail.com
+2026-08-04T00:39:18.109880+00:00 heroku[web.1]: Restarting
+2026-08-04T00:39:18.163538+00:00 heroku[web.1]: State changed from up to starting
+2026-08-04T00:39:17.875479+00:00 app[api]: Deploy 05f1bfae by user jinwiilonginjo01@gmail.com
+2026-08-04T00:39:17.875479+00:00 app[api]: Release v19 created by user jinwiilonginjo01@gmail.com
+2026-08-04T00:39:19.236480+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2026-08-04T00:39:19.346684+00:00 app[web.1]: 
+2026-08-04T00:39:19.346697+00:00 app[web.1]: 👋 Shutting down AciiNex-M...
+2026-08-04T00:39:19.410066+00:00 heroku[web.1]: Process exited with status 143
+2026-08-04T00:39:26.599341+00:00 heroku[web.1]: Starting process with command `npm start`
+2026-08-04T00:39:27.675249+00:00 app[web.1]: 
+2026-08-04T00:39:27.675275+00:00 app[web.1]: > aciinex-m-bot@3.0.0 start
+2026-08-04T00:39:27.675275+00:00 app[web.1]: > node index.js
+2026-08-04T00:39:27.675275+00:00 app[web.1]: 
+2026-08-04T00:39:28.670530+00:00 app[web.1]: ✅ Session restored from SESSION env variable.
+2026-08-04T00:39:28.671146+00:00 app[web.1]: 📡 Server running on port 22221
+2026-08-04T00:39:28.702745+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-04T00:39:28.708613+00:00 app[web.1]:      _        _ _ _   _                __  __ 
+2026-08-04T00:39:28.708615+00:00 app[web.1]:     / \   ___(_|_) \ | | _____  __    |  \/  |
+2026-08-04T00:39:28.708615+00:00 app[web.1]:    / _ \ / __| | |  \| |/ _ \ \/ /____| |\/| |
+2026-08-04T00:39:28.708616+00:00 app[web.1]:   / ___ \ (__| | | |\  |  __/>  <_____| |  | |
+2026-08-04T00:39:28.708616+00:00 app[web.1]:  /_/   \_\___|_|_|_| \_|\___/_/\_\    |_|  |_|
+2026-08-04T00:39:28.708617+00:00 app[web.1]:                                               
+2026-08-04T00:39:28.724772+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-04T00:39:28.992960+00:00 heroku[web.1]: State changed from starting to up
+2026-08-04T00:39:29.565489+00:00 app[web.1]: ✅ AciiNex-M connected successfully!
+2026-08-04T00:39:29.565537+00:00 app[web.1]: 📞 Connected number : +254784320958
+2026-08-04T00:39:29.565567+00:00 app[web.1]: 👤 WhatsApp name    : Finjohns(911)
+2026-08-04T00:39:29.565589+00:00 app[web.1]: 🌐 Mode: PUBLIC  |  Prefix: .
+2026-08-04T00:39:38.000000+00:00 app[api]: Build succeeded
+2026-08-04T00:43:09.103495+00:00 app[web.1]: [ AciiNex-M ♠♣] .ping From Finjohns(911) [ 254784320958 ]
+2026-08-04T00:43:42.869849+00:00 app[web.1]: [ AciiNex-M ♠♣] .uptime From Finjohns(911) [ 254784320958 ]
