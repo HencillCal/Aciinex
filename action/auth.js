@@ -80,10 +80,24 @@ async function authentication() {
   const rawSession = process.env.SESSION || '';
 
   if (!rawSession || rawSession.trim() === '') {
-    // No session string — bot will generate QR code
+    // ── IMPORTANT: why is SESSION empty? ────────────────────────────────────
+    // app.json env vars are a ONE-TIME template used ONLY when someone clicks
+    // the "Deploy to Heroku" button for the first time.  They are NOT re-read
+    // on every git push or dyno restart.
+    //
+    // To set SESSION on an existing Heroku app you MUST do ONE of:
+    //   A) Heroku dashboard → your app → Settings → Config Vars → add SESSION
+    //   B) Heroku CLI: heroku config:set SESSION="GIFTED-MD~xxxx" -a <app-name>
+    //
+    // Removing SESSION from .env and expecting app.json to fill it in will NOT work.
+    // ─────────────────────────────────────────────────────────────────────────
     if (!fs.existsSync(SESSION_DIR)) fs.mkdirSync(SESSION_DIR, { recursive: true });
     if (!fs.existsSync(SESSION_FILE)) {
-      console.log('📱 No SESSION set — QR code will appear in the terminal. Scan with WhatsApp.');
+      console.log('⚠️  SESSION env var is not set.');
+      console.log('   ➜ Heroku: go to your app → Settings → Config Vars → set SESSION');
+      console.log('   ➜ VPS / local: set SESSION=GIFTED-MD~xxx in your .env file');
+      console.log('   ➜ app.json DOES NOT set config vars on re-deploys — only on first "Deploy to Heroku" click.');
+      console.log('📱 Falling back to QR code — scan with WhatsApp to authenticate.');
     }
     return;
   }

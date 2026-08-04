@@ -14,7 +14,7 @@ const speed = require("performance-now");
 const Genius = require("genius-lyrics");
 const yts = require("yt-search");
 let lastTextTime = 0;
-const messageDelay = 500;
+const messageDelay = 0;
 const { DateTime } = require('luxon');
 const uploadtoimgur = require('./lib/imgur');
 const advice = require("badadvice");
@@ -238,46 +238,32 @@ module.exports = raven = async (client, m, chatUpdate, store) => {
      const Rspeed = speed() - timestamp 
 //========================================================================================================================//
 //========================================================================================================================//
-const baseDir = 'message_data';
-if (!fs.existsSync(baseDir)) {
-  fs.mkdirSync(baseDir);
-}
+// ── Anti-delete in-memory store (fast — zero disk I/O on every message) ──────
+// Replaces the old per-message fs.writeFileSync which blocked the event loop
+// and caused 3-5 second response delays under normal chat traffic.
+// Holds up to MAX_CACHE messages; oldest are evicted FIFO when full.
+const MAX_CACHE_SIZE = 1500;
+const _msgCache = new Map(); // messageId → full WAMessage
+
 function stylishReply(text) {
     return `\`\`\`\n${text}\n\`\`\``;
 }
+// kept for backward compatibility — returns array-of-one or empty array
 function loadChatData(remoteJid, messageId) {
-  const chatFilePath = path.join(baseDir, remoteJid, `${messageId}.json`);
-  try {
-    const data = fs.readFileSync(chatFilePath, 'utf8');
-    return JSON.parse(data) || [];
-  } catch (error) {
-    return [];
-  }
+  const msg = _msgCache.get(messageId);
+  return msg ? [msg] : [];
 }
-
+// kept for backward compatibility
 function saveChatData(remoteJid, messageId, chatData) {
-  const chatDir = path.join(baseDir, remoteJid);
-
-  if (!fs.existsSync(chatDir)) {
-    fs.mkdirSync(chatDir, { recursive: true });
-  }
-
-  const chatFilePath = path.join(chatDir, `${messageId}.json`);
-
-  try {
-    fs.writeFileSync(chatFilePath, JSON.stringify(chatData, null, 2));
-  } catch (error) {
-    console.error('Error saving chat data:', error);
-  }
+  if (chatData && chatData.length > 0) handleIncomingMessage(chatData[0]);
 }
-
 function handleIncomingMessage(message) {
-  const remoteJid = message.key.remoteJid;
-  const messageId = message.key.id;
-
-  const chatData = loadChatData(remoteJid, messageId);
-  chatData.push(message);
-  saveChatData(remoteJid, messageId, chatData);
+  if (!message?.key?.id) return;
+  if (_msgCache.size >= MAX_CACHE_SIZE) {
+    // evict oldest entry
+    _msgCache.delete(_msgCache.keys().next().value);
+  }
+  _msgCache.set(message.key.id, message);
 }
 
 async function handleMessageRevocation(client, revocationMessage) {
@@ -316,10 +302,11 @@ async function handleMessageRevocation(client, revocationMessage) {
         // Image message
         notificationText += ` 𝗗𝗲𝗹𝗲𝘁𝗲𝗱 𝗠𝗲𝗱𝗶𝗮 : [Image]`;
         try {
-          const buffer = await client.downloadMediaMessage(originalMessage.message.imageMessage);
+          // Pass the full WAMessage object — downloadMediaMessage needs it, not the sub-type
+          const buffer = await client.downloadMediaMessage(originalMessage);
           await client.sendMessage(client.user.id, { 
             image: buffer,
-	    caption: stylishReply(`${notificationText}\n\nImage caption: ${originalMessage.message.imageMessage.caption}`)
+	    caption: stylishReply(`${notificationText}\n\nImage caption: ${originalMessage.message.imageMessage.caption || ''}`)
           });
         } catch (mediaError) {
           console.error('Failed to download image:', mediaError);
@@ -331,10 +318,10 @@ async function handleMessageRevocation(client, revocationMessage) {
         // Video message
         notificationText += ` 𝗗𝗲𝗹𝗲𝘁𝗲𝗱 𝗠𝗲𝗱𝗶𝗮 : [Video]`;
         try {
-          const buffer = await client.downloadMediaMessage(originalMessage.message.videoMessage);
+          const buffer = await client.downloadMediaMessage(originalMessage);
           await client.sendMessage(client.user.id, { 
             video: buffer, 
-            caption: stylishReply(`${notificationText}\n\nVideo caption: ${originalMessage.message.videoMessage.caption}`)
+            caption: stylishReply(`${notificationText}\n\nVideo caption: ${originalMessage.message.videoMessage.caption || ''}`)
           });
         } catch (mediaError) {
           console.error('Failed to download video:', mediaError);
@@ -344,7 +331,7 @@ async function handleMessageRevocation(client, revocationMessage) {
       } else if (originalMessage.message?.stickerMessage) {
 	 notificationText += ` 𝗗𝗲𝗹𝗲𝘁𝗲𝗱 𝗠𝗲𝗱𝗶𝗮 : [Sticker]`;
       // Sticker message
-      const buffer = await client.downloadMediaMessage(originalMessage.message.stickerMessage);      
+      const buffer = await client.downloadMediaMessage(originalMessage);      
       await client.sendMessage(client.user.id, { sticker: buffer, 
 contextInfo: {
           externalAdReply: {
@@ -361,7 +348,7 @@ contextInfo: {
         const docMessage = originalMessage.message.documentMessage;
         const fileName = docMessage.fileName || `document_${Date.now()}.dat`;
         console.log('Attempting to download document...');
-        const buffer = await client.downloadMediaMessage(docMessage);
+        const buffer = await client.downloadMediaMessage(originalMessage);
         
        if (!buffer) {
             console.log('Download failed - empty buffer');
@@ -386,7 +373,7 @@ contextInfo: {
       } else if (originalMessage.message?.audioMessage) {
 	      notificationText += ` 𝗗𝗲𝗹𝗲𝘁𝗲𝗱 𝗠𝗲𝗱𝗶𝗮: \n\n [Audio]`;
       // Audio message
-      const buffer = await client.downloadMediaMessage(originalMessage.message.audioMessage);
+      const buffer = await client.downloadMediaMessage(originalMessage);
       const isPTT = originalMessage.message.audioMessage.ptt === true;
       await client.sendMessage(client.user.id, { audio: buffer, ptt: isPTT, mimetype: 'audio/mpeg', 
 contextInfo: {
