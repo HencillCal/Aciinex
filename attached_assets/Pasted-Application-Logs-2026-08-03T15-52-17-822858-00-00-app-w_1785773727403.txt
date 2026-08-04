@@ -1,0 +1,207 @@
+Application Logs
+2026-08-03T15:52:17.822858+00:00 app[web.1]:      _        _ _ _   _                __  __ 
+2026-08-03T15:52:17.822859+00:00 app[web.1]:     / \   ___(_|_) \ | | _____  __    |  \/  |
+2026-08-03T15:52:17.822859+00:00 app[web.1]:    / _ \ / __| | |  \| |/ _ \ \/ /____| |\/| |
+2026-08-03T15:52:17.822860+00:00 app[web.1]:   / ___ \ (__| | | |\  |  __/>  <_____| |  | |
+2026-08-03T15:52:17.822860+00:00 app[web.1]:  /_/   \_\___|_|_|_| \_|\___/_/\_\    |_|  |_|
+2026-08-03T15:52:17.822860+00:00 app[web.1]:                                               
+2026-08-03T15:52:17.847719+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-03T15:52:17.867160+00:00 heroku[web.1]: State changed from starting to up
+2026-08-03T15:52:18.965468+00:00 app[web.1]: ✅ AciiNex-M connected successfully!
+2026-08-03T15:52:18.965529+00:00 app[web.1]: Mode: PUBLIC | Prefix: .
+2026-08-03T15:52:39.296065+00:00 heroku[web.1]: Restarting
+2026-08-03T15:52:39.299016+00:00 heroku[web.1]: State changed from up to starting
+2026-08-03T15:52:40.327369+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2026-08-03T15:52:40.434378+00:00 app[web.1]: 
+2026-08-03T15:52:40.434393+00:00 app[web.1]: 👋 Shutting down AciiNex-M...
+2026-08-03T15:52:40.493601+00:00 heroku[web.1]: Process exited with status 143
+2026-08-03T15:52:46.410909+00:00 heroku[web.1]: Starting process with command `npm start`
+2026-08-03T15:51:41.000000+00:00 app[api]: Build started by user jinwiilonginjo01@gmail.com
+2026-08-03T15:52:47.400697+00:00 app[web.1]: 
+2026-08-03T15:52:47.400708+00:00 app[web.1]: > aciinex-m-bot@3.0.0 start
+2026-08-03T15:52:47.400709+00:00 app[web.1]: > node index.js
+2026-08-03T15:52:47.400709+00:00 app[web.1]: 
+2026-08-03T15:52:48.058477+00:00 heroku[web.1]: State changed from starting to up
+2026-08-03T15:52:47.843790+00:00 app[web.1]: ✅ Session restored from SESSION env variable.
+2026-08-03T15:52:47.844359+00:00 app[web.1]: 📡 Server running on port 18610
+2026-08-03T15:52:47.878277+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-03T15:52:47.885843+00:00 app[web.1]:      _        _ _ _   _                __  __ 
+2026-08-03T15:52:47.885844+00:00 app[web.1]:     / \   ___(_|_) \ | | _____  __    |  \/  |
+2026-08-03T15:52:47.885844+00:00 app[web.1]:    / _ \ / __| | |  \| |/ _ \ \/ /____| |\/| |
+2026-08-03T15:52:47.885844+00:00 app[web.1]:   / ___ \ (__| | | |\  |  __/>  <_____| |  | |
+2026-08-03T15:52:47.885845+00:00 app[web.1]:  /_/   \_\___|_|_|_| \_|\___/_/\_\    |_|  |_|
+2026-08-03T15:52:47.885845+00:00 app[web.1]:                                               
+2026-08-03T15:52:47.900499+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-03T15:52:48.896386+00:00 app[web.1]: ✅ AciiNex-M connected successfully!
+2026-08-03T15:52:48.896440+00:00 app[web.1]: Mode: PUBLIC | Prefix: .
+2026-08-03T15:52:08.462413+00:00 app[api]: Deploy be507b6b by user jinwiilonginjo01@gmail.com
+2026-08-03T15:52:08.462413+00:00 app[api]: Release v10 created by user jinwiilonginjo01@gmail.com
+2026-08-03T15:52:11.000000+00:00 app[api]: Build started by user jinwiilonginjo01@gmail.com
+2026-08-03T15:52:24.000000+00:00 app[api]: Build succeeded
+2026-08-03T15:52:26.348147+00:00 app[api]: Log session created by user jinwiilonginjo01@gmail.com
+2026-08-03T15:52:39.070434+00:00 app[api]: Release v11 created by user jinwiilonginjo01@gmail.com
+2026-08-03T15:52:39.070434+00:00 app[api]: Deploy dc384dc6 by user jinwiilonginjo01@gmail.com
+2026-08-03T15:52:54.000000+00:00 app[api]: Build succeeded
+2026-08-03T15:54:55.006448+00:00 app[web.1]: Message handler error: Cannot find module 'node-catbox'
+2026-08-03T15:54:55.006462+00:00 app[web.1]: Require stack:
+2026-08-03T15:54:55.006464+00:00 app[web.1]: - /app/lib/catbox.js
+2026-08-03T15:54:55.006464+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T15:54:55.006464+00:00 app[web.1]: - /app/index.js
+2026-08-03T15:54:55.014601+00:00 app[web.1]: Message handler error: Cannot find module 'node-catbox'
+2026-08-03T15:54:55.014602+00:00 app[web.1]: Require stack:
+2026-08-03T15:54:55.014603+00:00 app[web.1]: - /app/lib/catbox.js
+2026-08-03T15:54:55.014603+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T15:54:55.014604+00:00 app[web.1]: - /app/index.js
+2026-08-03T15:55:56.752362+00:00 app[web.1]: Message handler error: Cannot find module 'node-catbox'
+2026-08-03T15:55:56.752371+00:00 app[web.1]: Require stack:
+2026-08-03T15:55:56.752372+00:00 app[web.1]: - /app/lib/catbox.js
+2026-08-03T15:55:56.752372+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T15:55:56.752372+00:00 app[web.1]: - /app/index.js
+2026-08-03T15:57:57.084323+00:00 app[web.1]: Closing session: SessionEntry {
+2026-08-03T15:57:57.084333+00:00 app[web.1]:   _chains: {
+2026-08-03T15:57:57.084333+00:00 app[web.1]:     'Bf2eUu0JP8pI8mU+O5Qa46LRDXJifrGNC4CN7o3I9SJb': { chainKey: [Object], chainType: 2, messageKeys: {} },
+2026-08-03T15:57:57.084334+00:00 app[web.1]:     'Be+I7SysPbIXOe9nLXxNEeBdnTzbhOszi5ba2YlpaZ83': { chainKey: [Object], chainType: 1, messageKeys: {} }
+2026-08-03T15:57:57.084334+00:00 app[web.1]:   },
+2026-08-03T15:57:57.084334+00:00 app[web.1]:   registrationId: 1855736143,
+2026-08-03T15:57:57.084335+00:00 app[web.1]:   currentRatchet: {
+2026-08-03T15:57:57.084335+00:00 app[web.1]:     ephemeralKeyPair: {
+2026-08-03T15:57:57.084337+00:00 app[web.1]:       pubKey: <Buffer 05 ef 88 ed 2c ac 3d b2 17 39 ef 67 2d 7c 4d 11 e0 5d 9d 3c db 84 eb 33 8b 96 da d9 89 69 69 9f 37>,
+2026-08-03T15:57:57.084337+00:00 app[web.1]:       privKey: <Buffer 10 f0 7e c9 d8 8a d8 06 bd 7f 0e a5 22 b3 eb 0b 65 b1 6a e0 68 80 69 ad cf 43 35 36 dd ea 23 62>
+2026-08-03T15:57:57.084337+00:00 app[web.1]:     },
+2026-08-03T15:57:57.084339+00:00 app[web.1]:     lastRemoteEphemeralKey: <Buffer 05 fd 9e 52 ed 09 3f ca 48 f2 65 3e 3b 94 1a e3 a2 d1 0d 72 62 7e b1 8d 0b 80 8d ee 8d c8 f5 22 5b>,
+2026-08-03T15:57:57.084339+00:00 app[web.1]:     previousCounter: 8,
+2026-08-03T15:57:57.084339+00:00 app[web.1]:     rootKey: <Buffer 2a 1e cb 08 f5 c7 8b 44 bb 1e 0e 9a fc 18 72 e2 6a fa 9a fc f8 38 04 1a f7 f6 b3 f8 b1 e1 93 a5>
+2026-08-03T15:57:57.084340+00:00 app[web.1]:   },
+2026-08-03T15:57:57.084340+00:00 app[web.1]:   indexInfo: {
+2026-08-03T15:57:57.084340+00:00 app[web.1]:     baseKey: <Buffer 05 64 bf 1a 86 7f 2a 37 98 34 56 58 e3 53 68 8f ad 12 02 fc fb 68 9e e6 15 a4 93 c3 43 ef 03 90 38>,
+2026-08-03T15:57:57.084340+00:00 app[web.1]:     baseKeyType: 1,
+2026-08-03T15:57:57.084340+00:00 app[web.1]:     closed: -1,
+2026-08-03T15:57:57.084340+00:00 app[web.1]:     used: 1785772494911,
+2026-08-03T15:57:57.084340+00:00 app[web.1]:     created: 1785772369858,
+2026-08-03T15:57:57.084341+00:00 app[web.1]:     remoteIdentityKey: <Buffer 05 97 55 94 60 cb bb 0f 27 87 05 0d 52 4a d0 7d 87 cf ac cc 7f cb 0b 37 14 9c 66 e6 f6 87 fd 39 6c>
+2026-08-03T15:57:57.084341+00:00 app[web.1]:   }
+2026-08-03T15:57:57.084341+00:00 app[web.1]: }
+2026-08-03T15:57:57.489615+00:00 app[web.1]: Closing open session in favor of incoming prekey bundle
+2026-08-03T15:57:57.489920+00:00 app[web.1]: Closing session: SessionEntry {
+2026-08-03T15:57:57.489921+00:00 app[web.1]:   _chains: {
+2026-08-03T15:57:57.489921+00:00 app[web.1]:     'BcL3Rzhk3VcFGhn6+vEqoCNd6Tw5b+PQwlckvliccK1P': { chainKey: [Object], chainType: 2, messageKeys: {} },
+2026-08-03T15:57:57.489921+00:00 app[web.1]:     'BQJ5Qp/zwNTdpXpHsmWiMqX50yhvV/9WcG/aXzv1dLoU': { chainKey: [Object], chainType: 1, messageKeys: {} }
+2026-08-03T15:57:57.489922+00:00 app[web.1]:   },
+2026-08-03T15:57:57.489922+00:00 app[web.1]:   registrationId: 1785474302,
+2026-08-03T15:57:57.489922+00:00 app[web.1]:   currentRatchet: {
+2026-08-03T15:57:57.489922+00:00 app[web.1]:     ephemeralKeyPair: {
+2026-08-03T15:57:57.489923+00:00 app[web.1]:       pubKey: <Buffer 05 02 79 42 9f f3 c0 d4 dd a5 7a 47 b2 65 a2 32 a5 f9 d3 28 6f 57 ff 56 70 6f da 5f 3b f5 74 ba 14>,
+2026-08-03T15:57:57.489923+00:00 app[web.1]:       privKey: <Buffer 30 7b 84 3c 56 bb 08 11 a3 6e 0b fe c9 c9 87 d5 6c de dc 34 13 b5 94 bc 13 4d f5 f7 26 bf d4 67>
+2026-08-03T15:57:57.489923+00:00 app[web.1]:     },
+2026-08-03T15:57:57.489924+00:00 app[web.1]:     lastRemoteEphemeralKey: <Buffer 05 c2 f7 47 38 64 dd 57 05 1a 19 fa fa f1 2a a0 23 5d e9 3c 39 6f e3 d0 c2 57 24 be 58 9c 70 ad 4f>,
+2026-08-03T15:57:57.489924+00:00 app[web.1]:     previousCounter: 0,
+2026-08-03T15:57:57.489925+00:00 app[web.1]:     rootKey: <Buffer dd 62 04 f2 02 64 26 a7 12 ea 76 5c 1e ff d6 d0 b0 c9 27 64 a6 cb 6a 90 6e 37 16 9d c4 26 44 2e>
+2026-08-03T15:57:57.489925+00:00 app[web.1]:   },
+2026-08-03T15:57:57.489925+00:00 app[web.1]:   indexInfo: {
+2026-08-03T15:57:57.489925+00:00 app[web.1]:     baseKey: <Buffer 05 e7 1a c3 80 1d a3 2d e2 ea 6f 37 1f df 3a 66 7d 75 92 a1 de fd 38 1a 1a 51 da c6 aa 32 bc 6b 55>,
+2026-08-03T15:57:57.489925+00:00 app[web.1]:     baseKeyType: 2,
+2026-08-03T15:57:57.489925+00:00 app[web.1]:     closed: -1,
+2026-08-03T15:57:57.489925+00:00 app[web.1]:     used: 1785772556744,
+2026-08-03T15:57:57.489925+00:00 app[web.1]:     created: 1785772556744,
+2026-08-03T15:57:57.489926+00:00 app[web.1]:     remoteIdentityKey: <Buffer 05 56 24 53 ed 9f be 54 bf 29 3b 20 39 03 0f 6c 3c 6f 81 4d fa d2 8f d9 96 e8 7e ab 9a 9b b7 6f 76>
+2026-08-03T15:57:57.489926+00:00 app[web.1]:   }
+2026-08-03T15:57:57.489926+00:00 app[web.1]: }
+2026-08-03T15:58:04.000000+00:00 app[api]: Build started by user jinwiilonginjo01@gmail.com
+2026-08-03T15:58:31.281435+00:00 heroku[web.1]: Restarting
+2026-08-03T15:58:31.338977+00:00 heroku[web.1]: State changed from up to starting
+2026-08-03T15:58:31.069500+00:00 app[api]: Deploy d0ddc158 by user jinwiilonginjo01@gmail.com
+2026-08-03T15:58:31.069500+00:00 app[api]: Release v12 created by user jinwiilonginjo01@gmail.com
+2026-08-03T15:58:32.261476+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2026-08-03T15:58:32.366369+00:00 app[web.1]: 
+2026-08-03T15:58:32.366391+00:00 app[web.1]: 👋 Shutting down AciiNex-M...
+2026-08-03T15:58:32.437529+00:00 heroku[web.1]: Process exited with status 143
+2026-08-03T15:58:38.320884+00:00 heroku[web.1]: Starting process with command `npm start`
+2026-08-03T15:58:39.332366+00:00 app[web.1]: 
+2026-08-03T15:58:39.332381+00:00 app[web.1]: > aciinex-m-bot@3.0.0 start
+2026-08-03T15:58:39.332382+00:00 app[web.1]: > node index.js
+2026-08-03T15:58:39.332382+00:00 app[web.1]: 
+2026-08-03T15:58:39.975782+00:00 heroku[web.1]: State changed from starting to up
+2026-08-03T15:58:39.784979+00:00 app[web.1]: ✅ Session restored from SESSION env variable.
+2026-08-03T15:58:39.785518+00:00 app[web.1]: 📡 Server running on port 23262
+2026-08-03T15:58:39.819682+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-03T15:58:39.827557+00:00 app[web.1]:      _        _ _ _   _                __  __ 
+2026-08-03T15:58:39.827558+00:00 app[web.1]:     / \   ___(_|_) \ | | _____  __    |  \/  |
+2026-08-03T15:58:39.827558+00:00 app[web.1]:    / _ \ / __| | |  \| |/ _ \ \/ /____| |\/| |
+2026-08-03T15:58:39.827558+00:00 app[web.1]:   / ___ \ (__| | | |\  |  __/>  <_____| |  | |
+2026-08-03T15:58:39.827558+00:00 app[web.1]:  /_/   \_\___|_|_|_| \_|\___/_/\_\    |_|  |_|
+2026-08-03T15:58:39.827558+00:00 app[web.1]:                                               
+2026-08-03T15:58:39.842601+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-03T15:58:42.244034+00:00 app[web.1]: ✅ AciiNex-M connected successfully!
+2026-08-03T15:58:42.244073+00:00 app[web.1]: 📞 Connected number : +254784320958
+2026-08-03T15:58:42.244096+00:00 app[web.1]: 👤 WhatsApp name    : Finjohns(911)
+2026-08-03T15:58:42.244115+00:00 app[web.1]: 🌐 Mode: PUBLIC  |  Prefix: .
+2026-08-03T15:58:42.668812+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T15:58:42.668836+00:00 app[web.1]: Require stack:
+2026-08-03T15:58:42.668837+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T15:58:42.668837+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T15:58:42.668837+00:00 app[web.1]: - /app/index.js
+2026-08-03T15:58:46.000000+00:00 app[api]: Build succeeded
+2026-08-03T15:58:50.454916+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T15:58:50.454940+00:00 app[web.1]: Require stack:
+2026-08-03T15:58:50.454942+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T15:58:50.454942+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T15:58:50.454942+00:00 app[web.1]: - /app/index.js
+2026-08-03T15:59:42.000000+00:00 app[api]: Build started by user jinwiilonginjo01@gmail.com
+2026-08-03T15:59:59.533006+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T15:59:59.533026+00:00 app[web.1]: Require stack:
+2026-08-03T15:59:59.533027+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T15:59:59.533027+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T15:59:59.533028+00:00 app[web.1]: - /app/index.js
+2026-08-03T16:00:09.270487+00:00 heroku[web.1]: Restarting
+2026-08-03T16:00:09.326338+00:00 heroku[web.1]: State changed from up to starting
+2026-08-03T16:00:10.301326+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2026-08-03T16:00:10.408425+00:00 app[web.1]: 
+2026-08-03T16:00:10.408437+00:00 app[web.1]: 👋 Shutting down AciiNex-M...
+2026-08-03T16:00:10.474474+00:00 heroku[web.1]: Process exited with status 143
+2026-08-03T16:00:16.450087+00:00 heroku[web.1]: Starting process with command `npm start`
+2026-08-03T16:00:09.012638+00:00 app[api]: Deploy d7a61938 by user jinwiilonginjo01@gmail.com
+2026-08-03T16:00:09.012638+00:00 app[api]: Release v13 created by user jinwiilonginjo01@gmail.com
+2026-08-03T16:00:17.495963+00:00 app[web.1]: 
+2026-08-03T16:00:17.495977+00:00 app[web.1]: > aciinex-m-bot@3.0.0 start
+2026-08-03T16:00:17.495978+00:00 app[web.1]: > node index.js
+2026-08-03T16:00:17.495978+00:00 app[web.1]: 
+2026-08-03T16:00:18.305706+00:00 heroku[web.1]: State changed from starting to up
+2026-08-03T16:00:18.750283+00:00 app[web.1]: ✅ AciiNex-M connected successfully!
+2026-08-03T16:00:18.750338+00:00 app[web.1]: 📞 Connected number : +254784320958
+2026-08-03T16:00:18.750339+00:00 app[web.1]: 👤 WhatsApp name    : Finjohns(911)
+2026-08-03T16:00:18.750360+00:00 app[web.1]: 🌐 Mode: PUBLIC  |  Prefix: .
+2026-08-03T16:00:17.966812+00:00 app[web.1]: ✅ Session restored from SESSION env variable.
+2026-08-03T16:00:17.967372+00:00 app[web.1]: 📡 Server running on port 8579
+2026-08-03T16:00:18.005391+00:00 app[web.1]: Using WA v2.3000.1043857760, isLatest: true
+2026-08-03T16:00:18.014131+00:00 app[web.1]:      _        _ _ _   _                __  __ 
+2026-08-03T16:00:18.014132+00:00 app[web.1]:     / \   ___(_|_) \ | | _____  __    |  \/  |
+2026-08-03T16:00:18.014132+00:00 app[web.1]:    / _ \ / __| | |  \| |/ _ \ \/ /____| |\/| |
+2026-08-03T16:00:18.014133+00:00 app[web.1]:   / ___ \ (__| | | |\  |  __/>  <_____| |  | |
+2026-08-03T16:00:18.014133+00:00 app[web.1]:  /_/   \_\___|_|_|_| \_|\___/_/\_\    |_|  |_|
+2026-08-03T16:00:18.014133+00:00 app[web.1]:                                               
+2026-08-03T16:00:18.028989+00:00 app[web.1]: 🔌 Connecting to WhatsApp...
+2026-08-03T16:00:19.503306+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T16:00:19.503319+00:00 app[web.1]: Require stack:
+2026-08-03T16:00:19.503320+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T16:00:19.503320+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T16:00:19.503320+00:00 app[web.1]: - /app/index.js
+2026-08-03T16:00:40.195907+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T16:00:40.195921+00:00 app[web.1]: Require stack:
+2026-08-03T16:00:40.195922+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T16:00:40.195922+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T16:00:40.195922+00:00 app[web.1]: - /app/index.js
+2026-08-03T16:00:41.368991+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T16:00:41.368996+00:00 app[web.1]: Require stack:
+2026-08-03T16:00:41.368997+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T16:00:41.368997+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T16:00:41.368998+00:00 app[web.1]: - /app/index.js
+2026-08-03T16:00:41.849101+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T16:00:41.849122+00:00 app[web.1]: Require stack:
+2026-08-03T16:00:41.849122+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T16:00:41.849123+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T16:00:41.849123+00:00 app[web.1]: - /app/index.js
+2026-08-03T16:00:42.345574+00:00 app[web.1]: Message handler error: Cannot find module 'imgur'
+2026-08-03T16:00:42.345595+00:00 app[web.1]: Require stack:
+2026-08-03T16:00:42.345596+00:00 app[web.1]: - /app/lib/imgur.js
+2026-08-03T16:00:42.345596+00:00 app[web.1]: - /app/blacks.js
+2026-08-03T16:00:42.345596+00:00 app[web.1]: - /app/index.js
